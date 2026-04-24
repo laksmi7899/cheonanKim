@@ -1,0 +1,710 @@
+<h2 class="sr-only">천안김안과 조직 디벨롭 v2.0. 대표원장·총괄이사·부서장 3계층 R&R 최적화 + 서비스매니저 신설 + 스트레스·리더십·복지 3대 프로그램 통합 설계.</h2>
+<style>
+.dv-wrap{font-family:var(--font-sans);color:var(--color-text-primary);padding:0.5rem 0}
+.dv-hero{background:linear-gradient(135deg,#0F172A 0%,#334155 60%,#475569 100%);color:#fff;border-radius:var(--border-radius-lg);padding:1.75rem 1.75rem;margin-bottom:1.5rem}
+.dv-hl{display:inline-block;font-size:10px;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(252,211,77,0.2);color:#FCD34D;letter-spacing:0.6px;text-transform:uppercase;margin-bottom:10px}
+.dv-ht h1{margin:0 0 6px;font-size:22px;font-weight:500;color:#fff;line-height:1.3}
+.dv-ht p{margin:0;color:rgba(255,255,255,0.75);font-size:13px;line-height:1.7}
+.dv-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-top:18px}
+.dv-stat{background:rgba(255,255,255,0.08);border:0.5px solid rgba(255,255,255,0.15);border-radius:var(--border-radius-md);padding:12px 14px}
+.dv-stat-l{font-size:10px;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:0.5px;font-weight:500}
+.dv-stat-v{font-size:22px;font-weight:500;margin-top:4px;color:#fff}
+.dv-stat-s{font-size:11px;color:rgba(255,255,255,0.55);margin-top:2px}
+
+.dv-sec{margin-bottom:2rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.dv-sh{padding:1.25rem 1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;gap:14px;align-items:center}
+.dv-sno{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:15px;color:#fff;flex-shrink:0}
+.dv-sno.s1{background:#0F172A}
+.dv-sno.s2{background:#059669}
+.dv-sno.s3{background:#DC2626}
+.dv-sno.s4{background:#7C3AED}
+.dv-sno.s5{background:#0891B2}
+.dv-st{font-size:17px;font-weight:500;line-height:1.3}
+.dv-ssub{font-size:12px;color:var(--color-text-secondary);margin-top:3px;line-height:1.5}
+.dv-body{padding:1.25rem 1.5rem}
+.dv-h3{font-size:14px;font-weight:500;margin:1.5rem 0 0.75rem;color:var(--color-text-primary);display:flex;align-items:center;gap:8px}
+.dv-h3:first-child{margin-top:0}
+.dv-h3::before{content:"";display:block;width:3px;height:14px;background:currentColor;border-radius:1px}
+.dv-p{font-size:13px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:1rem}
+
+/* 3계층 R&R 카드 */
+.dv-rr{display:grid;grid-template-columns:1fr;gap:12px;margin:1rem 0}
+.dv-rr-c{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:0;overflow:hidden}
+.dv-rr-h{padding:12px 16px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.dv-rr-h.t1{background:#0F172A}
+.dv-rr-h.t2{background:#7F1D1D}
+.dv-rr-h.t3{background:#B45309}
+.dv-rr-h.t4{background:#1E3A8A}
+.dv-rr-h.t5{background:#059669}
+.dv-rr-n{font-size:14px;font-weight:500}
+.dv-rr-p{font-size:11px;opacity:0.85;margin-top:2px}
+.dv-rr-f{font-size:10px;background:rgba(255,255,255,0.2);padding:3px 9px;border-radius:999px;white-space:nowrap;font-weight:500}
+.dv-rr-b{padding:14px 16px}
+.dv-rr-g{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dv-rr-col h4{margin:0 0 8px;font-size:11px;color:var(--color-text-secondary);text-transform:uppercase;letter-spacing:0.4px;font-weight:500}
+.dv-rr-col ul{padding:0;margin:0;list-style:none}
+.dv-rr-col ul li{padding:4px 0 4px 14px;position:relative;font-size:12px;line-height:1.55;color:var(--color-text-primary)}
+.dv-rr-col.do ul li::before{content:"✓";position:absolute;left:0;color:#059669;font-weight:700}
+.dv-rr-col.dont ul li::before{content:"✕";position:absolute;left:0;color:#DC2626;font-weight:700}
+.dv-rr-col.dont ul li{color:var(--color-text-tertiary);text-decoration:line-through;text-decoration-color:rgba(220,38,38,0.3)}
+.dv-rr-meta{margin-top:12px;padding-top:10px;border-top:0.5px dashed var(--color-border-tertiary);display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--color-text-secondary)}
+.dv-rr-meta b{color:var(--color-text-primary);font-weight:500}
+
+/* 서비스매니저 상세 */
+.dv-sm-hero{background:linear-gradient(135deg,#10B981 0%,#059669 100%);color:#fff;padding:16px 18px;border-radius:var(--border-radius-md);margin-bottom:14px}
+.dv-sm-hero h3{margin:0 0 4px;font-size:16px;font-weight:500;color:#fff}
+.dv-sm-hero p{margin:0;font-size:12px;color:rgba(255,255,255,0.85);line-height:1.6}
+.dv-sm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:0.75rem 0}
+.dv-sm-card{background:var(--color-background-secondary);border-left:3px solid #059669;border-radius:var(--border-radius-md);padding:12px 14px}
+.dv-sm-t{font-size:12px;font-weight:500;color:#065F46;margin-bottom:6px}
+.dv-sm-d{font-size:12px;color:var(--color-text-secondary);line-height:1.6}
+
+/* 테이블 */
+.dv-tb{width:100%;border-collapse:collapse;font-size:12px;margin:0.75rem 0}
+.dv-tb th{text-align:left;padding:9px 11px;font-weight:500;color:var(--color-text-secondary);background:var(--color-background-secondary);font-size:11px;text-transform:uppercase;letter-spacing:0.4px;border-bottom:0.5px solid var(--color-border-tertiary)}
+.dv-tb td{padding:10px 11px;border-bottom:0.5px solid var(--color-border-tertiary);vertical-align:top;line-height:1.5}
+.dv-tb tr:last-child td{border-bottom:none}
+.dv-tb .tg{font-weight:500}
+.dv-tb .rt{font-weight:500;color:#0F172A}
+
+/* 디벨롭 카드 (스트레스·리더십·복지) */
+.dv-dev{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:1rem 0}
+.dv-dev-c{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px 16px;position:relative}
+.dv-dev-c::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;border-radius:var(--border-radius-md) var(--border-radius-md) 0 0}
+.dv-dev-c.r::before{background:#DC2626}
+.dv-dev-c.p::before{background:#7C3AED}
+.dv-dev-c.t::before{background:#0891B2}
+.dv-dev-tag{display:inline-block;font-size:10px;font-weight:500;padding:3px 8px;border-radius:4px;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.4px}
+.dv-dev-c.r .dv-dev-tag{background:#FEE2E2;color:#7F1D1D}
+.dv-dev-c.p .dv-dev-tag{background:#EDE9FE;color:#4C1D95}
+.dv-dev-c.t .dv-dev-tag{background:#CFFAFE;color:#164E63}
+.dv-dev-t{font-size:13px;font-weight:500;margin-bottom:8px;line-height:1.35}
+.dv-dev-list{padding:0;margin:0;list-style:none}
+.dv-dev-list li{padding:5px 0 5px 14px;position:relative;font-size:12px;line-height:1.55;color:var(--color-text-secondary);border-bottom:0.5px dashed var(--color-border-tertiary)}
+.dv-dev-list li:last-child{border-bottom:none}
+.dv-dev-list li::before{content:"•";position:absolute;left:0;color:var(--color-text-tertiary);font-size:13px;line-height:1}
+.dv-dev-list li b{color:var(--color-text-primary);font-weight:500}
+.dv-dev-meta{margin-top:8px;padding-top:8px;border-top:0.5px solid var(--color-border-tertiary);font-size:11px;color:var(--color-text-tertiary)}
+.dv-dev-meta b{color:var(--color-text-primary);font-weight:500}
+
+/* 복지 패키지 테이블 */
+.dv-welfare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:1rem 0}
+.dv-wel-c{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.dv-wel-h{font-size:13px;font-weight:500;margin-bottom:10px;color:#0891B2;display:flex;align-items:center;gap:8px}
+.dv-wel-h::before{content:"";display:block;width:4px;height:16px;background:currentColor;border-radius:2px}
+.dv-wel-l{padding:0;margin:0;list-style:none;font-size:12px;line-height:1.7}
+.dv-wel-l li{padding:4px 0;display:flex;justify-content:space-between;gap:10px;border-bottom:0.5px dashed var(--color-border-tertiary)}
+.dv-wel-l li:last-child{border-bottom:none}
+.dv-wel-l li span:first-child{color:var(--color-text-primary)}
+.dv-wel-l li span:last-child{color:var(--color-text-secondary);font-weight:500;text-align:right;white-space:nowrap}
+.dv-wel-l li.new span:first-child::after{content:" NEW";font-size:9px;font-weight:500;background:#059669;color:#fff;padding:1px 5px;border-radius:3px;margin-left:6px;letter-spacing:0.3px}
+
+/* 예산 요약 */
+.dv-budget{background:linear-gradient(135deg,#F0F9FF 0%,#E0F2FE 100%);border:0.5px solid #BAE6FD;border-radius:var(--border-radius-md);padding:16px 18px;margin:1rem 0}
+.dv-budget h4{margin:0 0 10px;font-size:14px;font-weight:500;color:#0C4A6E}
+.dv-budget-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.dv-budget-i{background:rgba(255,255,255,0.6);padding:8px 10px;border-radius:6px}
+.dv-budget-l{font-size:10px;color:#075985;text-transform:uppercase;letter-spacing:0.4px;font-weight:500}
+.dv-budget-v{font-size:16px;font-weight:500;color:#0C4A6E;margin-top:2px}
+.dv-budget-s{font-size:10px;color:#0369A1;margin-top:1px}
+.dv-budget-total{margin-top:10px;padding-top:10px;border-top:0.5px solid rgba(14,165,233,0.3);display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#0C4A6E;font-weight:500}
+.dv-budget-total b{font-size:18px}
+
+/* 액션 버튼 */
+.dv-actions{margin:2rem 0 0.5rem;padding-top:1.25rem;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.dv-btn{font-family:var(--font-sans);padding:9px 18px;font-size:13px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:transparent;cursor:pointer;color:var(--color-text-primary);font-weight:500}
+.dv-btn:hover{background:var(--color-background-secondary)}
+.dv-btn.primary{background:var(--color-text-primary);color:var(--color-background-primary);border-color:var(--color-text-primary)}
+</style>
+
+<div class="dv-wrap">
+
+  <div class="dv-hero">
+    <span class="dv-hl">임원보고서 v2.0 디벨롭</span>
+    <div class="dv-ht">
+      <h1>천안김안과 조직·복지 통합 디벨롭</h1>
+      <p>대표원장·총괄이사·부서장 3계층 R&amp;R 최적화 + 서비스매니저 신설 + 스트레스·리더십·복지 3대 프로그램 통합 설계. 71명 조직을 75명 체계로 확장하며 번아웃 구조 근본 해소.</p>
+    </div>
+    <div class="dv-stats">
+      <div class="dv-stat">
+        <div class="dv-stat-l">3계층 R&R</div>
+        <div class="dv-stat-v">대표·이사·부서장</div>
+        <div class="dv-stat-s">RACI 전면 재설계</div>
+      </div>
+      <div class="dv-stat">
+        <div class="dv-stat-l">신설 포지션</div>
+        <div class="dv-stat-v">서비스매니저</div>
+        <div class="dv-stat-s">팀 3~4명 편성</div>
+      </div>
+      <div class="dv-stat">
+        <div class="dv-stat-l">디벨롭 영역</div>
+        <div class="dv-stat-v">3대 12건</div>
+        <div class="dv-stat-s">스트레스·리더십·복지</div>
+      </div>
+      <div class="dv-stat">
+        <div class="dv-stat-l">추가 예산 (연)</div>
+        <div class="dv-stat-v">1.8~2.5억</div>
+        <div class="dv-stat-s">매출 대비 0.9%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 01. 3계층 R&R 최적화 ═══ -->
+  <div class="dv-sec">
+    <div class="dv-sh">
+      <div class="dv-sno s1">01</div>
+      <div>
+        <div class="dv-st">3계층 R&amp;R 최적화 — 대표원장·총괄이사·CMO·부서장</div>
+        <div class="dv-ssub">각 계층이 반드시 해야 할 일(Do)과 하지 말아야 할 일(Don't) 명시 · 주간 시간 배분 표준화</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <div class="dv-rr">
+
+        <!-- 대표원장 -->
+        <div class="dv-rr-c">
+          <div class="dv-rr-h t1">
+            <div>
+              <div class="dv-rr-n">Tier 1 · 대표원장 (정도현)</div>
+              <div class="dv-rr-p">Vision · Strategy · External · Final Decision</div>
+            </div>
+            <div class="dv-rr-f">주 36h</div>
+          </div>
+          <div class="dv-rr-b">
+            <div class="dv-rr-g">
+              <div class="dv-rr-col do">
+                <h4>DO · 집중 업무</h4>
+                <ul>
+                  <li>5년 비전·전략 수립 및 연간 경영계획 확정</li>
+                  <li>500만원+ 투자·M&A·신규 사업 의사결정</li>
+                  <li>핵심 인사(부서장급+) 채용·평가·면담</li>
+                  <li>학회·업계 네트워크·대외 커뮤니케이션</li>
+                  <li>CMO·총괄이사 월 1회 1:1 코칭</li>
+                  <li>분기 부서장 리뷰 주관 (전체 회의)</li>
+                  <li>임상 (집도 10h/주 유지)</li>
+                </ul>
+              </div>
+              <div class="dv-rr-col dont">
+                <h4>DON'T · 위임 업무</h4>
+                <ul>
+                  <li>100만원 이하 결재 (총괄이사 위임)</li>
+                  <li>콘텐츠 검수 (진료협력팀 실장 위임)</li>
+                  <li>근태·휴가 승인 (각 부서장 승인)</li>
+                  <li>개별 채용 면접 (부서장급 제외)</li>
+                  <li>일상 운영 결정 (총괄이사 위임)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="dv-rr-meta">
+              <span><b>시간 배분</b> 전략 15h · 의사결정 4h · 코칭 4h · 대외 3h · 임상 10h</span>
+              <span><b>Deputy</b> 총괄이사 + CMO</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 총괄이사 -->
+        <div class="dv-rr-c">
+          <div class="dv-rr-h t2">
+            <div>
+              <div class="dv-rr-n">Tier 1 · 총괄이사 (양경자)</div>
+              <div class="dv-rr-p">Operations · Compliance · Integration</div>
+            </div>
+            <div class="dv-rr-f">주 40h</div>
+          </div>
+          <div class="dv-rr-b">
+            <div class="dv-rr-g">
+              <div class="dv-rr-col do">
+                <h4>DO · 집중 업무</h4>
+                <ul>
+                  <li>전사 일상 운영 총괄·부서 간 이슈 조율</li>
+                  <li>예산 집행·재무 모니터링 (월간)</li>
+                  <li>컴플라이언스 (노무·개인정보·의료법 점검)</li>
+                  <li>부서장 주간 회의 주재 (월요일 1h)</li>
+                  <li>부서장 1:1 멘토링 (월 1회, 7인 전원)</li>
+                  <li>채용 최종 승인 (Deputy급 이하)</li>
+                  <li>급여·성과급 1차 검토</li>
+                  <li>대표원장·CMO 경영 의사결정 서포트</li>
+                </ul>
+              </div>
+              <div class="dv-rr-col dont">
+                <h4>DON'T · 위임 업무</h4>
+                <ul>
+                  <li>직접 집도·진료 (비의사)</li>
+                  <li>개별 업무 실행 (부서장·팀원)</li>
+                  <li>현장 체크리스트 작성</li>
+                  <li>단순 문서 검토</li>
+                  <li>콘텐츠 제작·디자인</li>
+                </ul>
+              </div>
+            </div>
+            <div class="dv-rr-meta">
+              <span><b>시간 배분</b> 운영 20h · 컴플라이언스 6h · 부서장 지원 8h · 경영진 협의 6h</span>
+              <span><b>Deputy</b> 인사총무팀장</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CMO -->
+        <div class="dv-rr-c">
+          <div class="dv-rr-h t3">
+            <div>
+              <div class="dv-rr-n">Tier 1.5 · CMO 부원장 (신설)</div>
+              <div class="dv-rr-p">Clinical Excellence · Medical Team Leadership</div>
+            </div>
+            <div class="dv-rr-f">주 36h</div>
+          </div>
+          <div class="dv-rr-b">
+            <div class="dv-rr-g">
+              <div class="dv-rr-col do">
+                <h4>DO · 집중 업무</h4>
+                <ul>
+                  <li>집도 (본업, 주 24h)</li>
+                  <li>원장단 6인 대표·스케줄 조율</li>
+                  <li>월례 합병증 리뷰 회의 주관</li>
+                  <li>신입 원장 OJT 주관</li>
+                  <li>수술 안전 SOP 준수 감독 (SOP-04·05·06)</li>
+                  <li>대표원장과 의학 정책 협의 (월 1회)</li>
+                  <li>의료 관련 외부 기관 대응</li>
+                </ul>
+              </div>
+              <div class="dv-rr-col dont">
+                <h4>DON'T · 위임 업무</h4>
+                <ul>
+                  <li>비임상 운영 결정</li>
+                  <li>마케팅·HR 의사결정</li>
+                  <li>재무·예산 업무</li>
+                  <li>행정 서류 작성</li>
+                </ul>
+              </div>
+            </div>
+            <div class="dv-rr-meta">
+              <span><b>시간 배분</b> 집도 24h · 원장단 관리 6h · 의료 회의 3h · 교육 3h</span>
+              <span><b>월 수당</b> 150~200만원 (집도 수익은 별도)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 부서장 공통 -->
+        <div class="dv-rr-c">
+          <div class="dv-rr-h t4">
+            <div>
+              <div class="dv-rr-n">Tier 2 · 부서장 8인 (원무·간호·검사·고객·진료협력·인사총무·서비스매니저)</div>
+              <div class="dv-rr-p">Strategy · Coaching · Exception · A(최종책임)</div>
+            </div>
+            <div class="dv-rr-f">주 40h</div>
+          </div>
+          <div class="dv-rr-b">
+            <div class="dv-rr-g">
+              <div class="dv-rr-col do">
+                <h4>DO · 집중 업무</h4>
+                <ul>
+                  <li>팀 전략·KPI 주간 리뷰</li>
+                  <li>Deputy/부팀장 코칭·육성 (월 2회 1:1)</li>
+                  <li>월례 보고·분기 전략 리뷰</li>
+                  <li>이상 상황·예외 사항 의사결정</li>
+                  <li>채용 1차 면접·팀원 평가</li>
+                  <li>부서 간 수평 조율 (월요 회의)</li>
+                </ul>
+              </div>
+              <div class="dv-rr-col dont">
+                <h4>DON'T · Deputy 위임</h4>
+                <ul>
+                  <li>일상 실행 업무 (Deputy 전담)</li>
+                  <li>단순 결재·서명 (Deputy 결재)</li>
+                  <li>정기 체크리스트 작성</li>
+                  <li>매일 보고서 작성 (주간 취합)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="dv-rr-meta">
+              <span><b>Span of Control</b> 5~7명 권장 (Deputy 분산 후)</span>
+              <span><b>KPI 수</b> 3~4개 핵심만 (나머지 Deputy 이양)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="dv-h3" style="color:var(--color-text-secondary)">RACI 재설계 요약</div>
+      <table class="dv-tb">
+        <thead>
+          <tr>
+            <th>의사결정 영역</th>
+            <th>R (실행)</th>
+            <th>A (최종책임)</th>
+            <th>C (협의)</th>
+            <th>I (통보)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tg">전략·비전·M&A·500만원+ 투자</td><td>대표원장</td><td class="rt">대표원장</td><td>총괄이사·CMO</td><td>부서장 전원</td></tr>
+          <tr><td class="tg">부서장급 채용·평가</td><td>총괄이사</td><td class="rt">대표원장</td><td>CMO·해당부서</td><td>이사회</td></tr>
+          <tr><td class="tg">일상 운영·부서 간 조율</td><td>총괄이사</td><td class="rt">총괄이사</td><td>부서장</td><td>대표원장</td></tr>
+          <tr><td class="tg">임상 품질·합병증 대응</td><td>CMO</td><td class="rt">CMO</td><td>간호팀장</td><td>대표원장·총괄이사</td></tr>
+          <tr><td class="tg">팀 KPI·팀원 육성</td><td>Deputy</td><td class="rt">부서장</td><td>부서장</td><td>총괄이사</td></tr>
+          <tr><td class="tg">SOP 실행·체크리스트</td><td>팀원</td><td class="rt">Deputy</td><td>부서장</td><td>MSO</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <!-- ═══ 02. 서비스매니저 신설 ═══ -->
+  <div class="dv-sec">
+    <div class="dv-sh">
+      <div class="dv-sno s2">02</div>
+      <div>
+        <div class="dv-st">서비스매니저 신설 — 환자동선 어레인지 매니저</div>
+        <div class="dv-ssub">부서 사이 공백을 메우는 수평 조율자 · 환자 Journey 경험 최적화 전담 포지션</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <div class="dv-sm-hero">
+        <h3>Service Manager — 환자 Journey 총괄 매니저</h3>
+        <p>현재 원무·간호·검사·고객팀이 각자 자기 구간만 관리. 환자 전체 여정 관점에서 관리하는 사람 부재. 병목과 지연은 구간 사이에서 발생. 서비스매니저는 <b>부서 vs 부서 사이의 공백</b>을 메우는 수평 조율자 역할.</p>
+      </div>
+
+      <div class="dv-h3" style="color:#065F46">핵심 책임 5가지</div>
+      <div class="dv-sm-grid">
+        <div class="dv-sm-card">
+          <div class="dv-sm-t">① 환자 동선 실시간 모니터링</div>
+          <div class="dv-sm-d">접수부터 귀가까지 전 구간 대기시간 측정. 병목 구간 감지 시 즉시 층별 안내 직원 동적 재배치. 피크타임(10-12시·14-16시) 집중 대응.</div>
+        </div>
+        <div class="dv-sm-card">
+          <div class="dv-sm-t">② VIP·복잡 케이스 1:1 동행</div>
+          <div class="dv-sm-d">VIP 환자 개별 동행 서비스. 고령·이동불편 환자 전담. 외국인 환자 영어 안내. 리퍼럴로 방문한 중요 환자 의전.</div>
+        </div>
+        <div class="dv-sm-card">
+          <div class="dv-sm-t">③ Cross-Dept Communication Hub</div>
+          <div class="dv-sm-d">원무↔간호↔검사↔고객 연결 허브. 부서 간 이슈 실시간 중재. 매일 아침 5분 통합 스탠드업 미팅 주관.</div>
+        </div>
+        <div class="dv-sm-card">
+          <div class="dv-sm-t">④ 환자 불만 1차 대응</div>
+          <div class="dv-sm-d">현장 불만 즉시 대응·해결. 에스컬레이션 판단 (총괄이사·부서장 연결 여부). 월간 불만 사례 분석 리포트.</div>
+        </div>
+        <div class="dv-sm-card">
+          <div class="dv-sm-t">⑤ 만족도·NPS 관리</div>
+          <div class="dv-sm-d">환자 만족도 설문 운영. NPS 측정·개선 액션. 네이버 리뷰 48시간 내 답변. 부서별 만족도 격차 분석.</div>
+        </div>
+      </div>
+
+      <div class="dv-h3" style="color:#065F46">조직 편입 & 팀 구성</div>
+      <table class="dv-tb">
+        <tr><td class="tg" style="width:30%">소속 부서</td><td><b>총괄이사 직속 독립 부서</b> (수평 조율 권한 보장) — 진료팀 산하로 편입 시 부서 이익 충돌 우려</td></tr>
+        <tr><td class="tg">팀 구성</td><td>팀장 1명 + 팀원 2~3명 (총 3~4명). 팀원은 층별·시간대별 교대 배치</td></tr>
+        <tr><td class="tg">채용 원칙</td><td>내부 승진 우선 — 고객팀·원무팀 내 리더십·커뮤니케이션 역량 우수자 발굴. 부족 시 외부 채용 (호텔·항공 서비스 경력자 선호)</td></tr>
+        <tr><td class="tg">핵심 역량</td><td>공감 능력 · 멀티태스킹 · 긴급 의사결정 · 부서 간 중재 · 외국어(영어 중급+ 우대)</td></tr>
+        <tr><td class="tg">보고 라인</td><td>총괄이사 직보. 주간 운영회의 참석·월간 KPI 리뷰 보고</td></tr>
+      </table>
+
+      <div class="dv-h3" style="color:#065F46">KPI & 예산</div>
+      <table class="dv-tb">
+        <thead>
+          <tr>
+            <th>KPI 지표</th>
+            <th>현재 (추정)</th>
+            <th>목표 (서비스매니저 도입 후)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tg">환자 평균 총 체류시간</td><td>90~120분</td><td class="rt">60~80분 (-30%)</td></tr>
+          <tr><td class="tg">부서 간 전달 오류</td><td>월 5~10건</td><td class="rt">월 1건 이하</td></tr>
+          <tr><td class="tg">환자 NPS</td><td>측정 미실시</td><td class="rt">NPS 70+ 도달</td></tr>
+          <tr><td class="tg">불만 1차 해결률</td><td>30~40%</td><td class="rt">90%+</td></tr>
+          <tr><td class="tg">피크타임 대기시간</td><td>40~60분</td><td class="rt">20분 이내</td></tr>
+          <tr><td class="tg">네이버 리뷰 평점</td><td>4.5~4.6</td><td class="rt">4.8+</td></tr>
+        </tbody>
+      </table>
+
+      <div class="dv-budget">
+        <h4>서비스매니저 팀 예산</h4>
+        <div class="dv-budget-g">
+          <div class="dv-budget-i"><div class="dv-budget-l">팀장</div><div class="dv-budget-v">5,000만원</div><div class="dv-budget-s">연봉 (경력자)</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">팀원 3명</div><div class="dv-budget-v">9,900만원</div><div class="dv-budget-s">연봉 3,300만×3</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">유니폼·장비</div><div class="dv-budget-v">500만원</div><div class="dv-budget-s">초기 세팅</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">교육·복지</div><div class="dv-budget-v">600만원</div><div class="dv-budget-s">서비스 교육</div></div>
+        </div>
+        <div class="dv-budget-total">
+          <span>연간 총 투자</span>
+          <b>약 1.6억원</b>
+        </div>
+      </div>
+
+      <div class="dv-p" style="background:var(--color-background-secondary);padding:12px 14px;border-radius:8px;margin-top:12px"><b>ROI 시뮬레이션</b> — 재진율 10%+ 개선 + 리퍼럴 신환 월 30명+ 유입 가정 시 연 매출 10~15억원+ 기여. 투자 대비 회수 2~3개월. 환자 만족도·브랜드 가치 상승 등 무형 효과는 별도.</div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 03. 스트레스 관리 프로그램 ═══ -->
+  <div class="dv-sec">
+    <div class="dv-sh">
+      <div class="dv-sno s3">03</div>
+      <div>
+        <div class="dv-st">스트레스 관리 프로그램 — EAP·번아웃 감지·부서장 특화</div>
+        <div class="dv-ssub">Critical 3인(간호·검사·인사총무) 우선 적용 · 전 직원 확대 단계적 도입</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <div class="dv-dev">
+        <div class="dv-dev-c r">
+          <span class="dv-dev-tag">A. EAP 도입</span>
+          <div class="dv-dev-t">Employee Assistance Program — 외부 심리상담 제휴</div>
+          <ul class="dv-dev-list">
+            <li><b>월 1회 개인 상담 세션</b> 무료 제공 (연 12회/인)</li>
+            <li>가족도 포함 (배우자·자녀)</li>
+            <li>비밀유지 보장 — 회사에 상담 내용 미공개</li>
+            <li>전화·화상·대면 3가지 방식</li>
+            <li>외부 제휴 기관: 전문 심리상담센터·EAP 전문 업체</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 2,000~3,000만원 · <b>도입 시점</b> Q2 내</div>
+        </div>
+
+        <div class="dv-dev-c r">
+          <span class="dv-dev-tag">B. 번아웃 조기 감지</span>
+          <div class="dv-dev-t">MBI 한국어판 정기 실시 + 고위험군 자동 알림</div>
+          <ul class="dv-dev-list">
+            <li><b>분기 1회 MBI 설문</b> 전 직원 실시</li>
+            <li>3개 차원 측정: 정서적 소진·비인격화·개인성취감 저하</li>
+            <li>고위험군 자동 알림 (부서장·총괄이사)</li>
+            <li>익명 집계 + 개별 피드백 선택</li>
+            <li>연간 건강검진에 정신건강 항목 추가</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 500~800만원 · <b>첫 설문</b> W4 내 시범 실시</div>
+        </div>
+
+        <div class="dv-dev-c r">
+          <span class="dv-dev-tag">C. 부서장 특화</span>
+          <div class="dv-dev-t">Critical 3인 + 부서장 7인 집중 프로그램</div>
+          <ul class="dv-dev-list">
+            <li><b>월 1회 외부 코치 1:1 세션</b> (60분)</li>
+            <li>분기 1박 워크샵 (힐링·전략 병행 · 1박 2일)</li>
+            <li>연 1회 해외 벤치마킹 투어 (학회 연동)</li>
+            <li>Critical 3인 우선 적용 (간호·검사·인사총무)</li>
+            <li>6개월 후 전 부서장 확대</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 3,000~4,000만원 · <b>도입</b> 즉시 Critical 3인</div>
+        </div>
+
+        <div class="dv-dev-c r">
+          <span class="dv-dev-tag">D. 현장 인프라</span>
+          <div class="dv-dev-t">휴게실·마음챙김·운동 지원</div>
+          <ul class="dv-dev-list">
+            <li><b>휴게실 업그레이드</b> — 마사지 체어·릴렉스존</li>
+            <li>점심시간 마음챙김 세션 (주 1회 10분)</li>
+            <li>명상 앱 유료 구독 지원 (월 5천원/인)</li>
+            <li>운동 시설·요가 클래스 지원 (월 5만원/인)</li>
+            <li>수면실 1개 신설 (야근 대비)</li>
+          </ul>
+          <div class="dv-dev-meta"><b>초기 비용</b> 3,000만원 · <b>월 운영비</b> 200만원</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 04. 리더십 교육 체계 ═══ -->
+  <div class="dv-sec">
+    <div class="dv-sh">
+      <div class="dv-sno s4">04</div>
+      <div>
+        <div class="dv-st">리더십 교육 체계 — 계층별 4-Tier 차별화</div>
+        <div class="dv-ssub">대표원장 CEO 코칭부터 Deputy 후보 파이프라인까지 · 연 6,500만원 투자</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <div class="dv-dev">
+        <div class="dv-dev-c p">
+          <span class="dv-dev-tag">Tier 1 · 대표원장</span>
+          <div class="dv-dev-t">CEO 코칭 · 경영자 과정 · 해외 벤치마킹</div>
+          <ul class="dv-dev-list">
+            <li><b>외부 CEO 코치 월 1회 1:1</b> (60분, 연 12회)</li>
+            <li>의료기관 경영자 과정 수강 (연 1회)</li>
+            <li>해외 벤치마킹 투어 (연 1회, 학회 연동)</li>
+            <li>도서 코칭 (월 1권 + 코치 리뷰)</li>
+            <li>임원 동료 네트워크 (Vistage·YPO 등)</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 1,500~2,000만원 · <b>형식</b> 개별 커스텀</div>
+        </div>
+
+        <div class="dv-dev-c p">
+          <span class="dv-dev-tag">Tier 2 · 총괄이사·CMO</span>
+          <div class="dv-dev-t">의료 리더십 심화 · 경영관리자 과정</div>
+          <ul class="dv-dev-list">
+            <li>의료 리더십 과정 (연 2회)</li>
+            <li>외부 코치 분기 1회 1:1</li>
+            <li>병원 관리자 포럼 참여</li>
+            <li>MBA 단기 과정 (AMP 등)</li>
+            <li>타 병원 CMO·CEO 네트워킹</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 1,000~1,500만원/인 · <b>대상</b> 2인</div>
+        </div>
+
+        <div class="dv-dev-c p">
+          <span class="dv-dev-tag">Tier 3 · 부서장 8인</span>
+          <div class="dv-dev-t">코칭 리더십 · 도서 클럽 · 타병원 탐방</div>
+          <ul class="dv-dev-list">
+            <li>코칭 리더십 과정 (분기 1회 3h, 연 4회)</li>
+            <li>1:1 외부 코치 매칭 (연 6회)</li>
+            <li>도서 클럽 — 분기 1권 · 월간 토론회</li>
+            <li>타병원 벤치마킹 투어 (반기 1회)</li>
+            <li>리더십 360도 평가 연 1회</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 2,500~3,500만원 · <b>형식</b> 그룹 + 개별</div>
+        </div>
+
+        <div class="dv-dev-c p">
+          <span class="dv-dev-tag">Tier 4 · Deputy 후보</span>
+          <div class="dv-dev-t">리더십 파이프라인 — 미래 리더 육성</div>
+          <ul class="dv-dev-list">
+            <li>Deputy 지명자 기본 교육 (연 2회 2일)</li>
+            <li>멘토-멘티 매칭 (부서장 매칭)</li>
+            <li>프로젝트 리딩 경험 (분기별)</li>
+            <li>외부 리더십 워크샵 (연 1회)</li>
+          </ul>
+          <div class="dv-dev-meta"><b>예산</b> 연 500~1,000만원 · <b>대상</b> 8~10명</div>
+        </div>
+      </div>
+
+      <div class="dv-budget">
+        <h4>리더십 교육 연간 예산 (합계)</h4>
+        <div class="dv-budget-g">
+          <div class="dv-budget-i"><div class="dv-budget-l">Tier 1</div><div class="dv-budget-v">2,000만</div><div class="dv-budget-s">대표원장</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">Tier 2</div><div class="dv-budget-v">3,000만</div><div class="dv-budget-s">총괄이사·CMO</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">Tier 3</div><div class="dv-budget-v">3,500만</div><div class="dv-budget-s">부서장 8인</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">Tier 4</div><div class="dv-budget-v">1,000만</div><div class="dv-budget-s">Deputy 후보</div></div>
+        </div>
+        <div class="dv-budget-total">
+          <span>리더십 교육 연간 총액</span>
+          <b>약 9,500만원</b>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 05. 직원 복지 확대 ═══ -->
+  <div class="dv-sec">
+    <div class="dv-sh">
+      <div class="dv-sno s5">05</div>
+      <div>
+        <div class="dv-st">직원 복지 확대 — 기본·신규·병원특화 3트랙</div>
+        <div class="dv-ssub">법정 복지 이상의 자발적 복지 + 병원 특화 혜택으로 이직률 10%p+ 감소 목표</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <div class="dv-welfare-grid">
+
+        <div class="dv-wel-c">
+          <div class="dv-wel-h" style="color:#059669">A. 기본 복지 강화</div>
+          <ul class="dv-wel-l">
+            <li><span>4대보험 + 퇴직연금</span><span>기존</span></li>
+            <li><span>연차 85% 강제 소진제</span><span>제도화</span></li>
+            <li class="new"><span>경조사 유급휴가 확대</span><span>본인 결혼 5일</span></li>
+            <li class="new"><span>부모상 유급휴가</span><span>5일</span></li>
+            <li class="new"><span>건강검진 배우자 포함</span><span>2년 1회</span></li>
+            <li class="new"><span>독감 예방접종 전원 무료</span><span>연 1회</span></li>
+          </ul>
+        </div>
+
+        <div class="dv-wel-c">
+          <div class="dv-wel-h" style="color:#7C3AED">B. 신규 복지 (10건)</div>
+          <ul class="dv-wel-l">
+            <li class="new"><span>생일·기념일 휴가</span><span>연 1일</span></li>
+            <li class="new"><span>장기근속 포상 3년</span><span>50만원</span></li>
+            <li class="new"><span>장기근속 포상 5년</span><span>100만원</span></li>
+            <li class="new"><span>장기근속 포상 10년</span><span>해외여행권 200만</span></li>
+            <li class="new"><span>가족수당 (자녀)</span><span>월 10만원/인</span></li>
+            <li class="new"><span>식대 지원</span><span>월 15만원</span></li>
+            <li class="new"><span>교통비 지원</span><span>월 10만원</span></li>
+            <li class="new"><span>피트니스·헬스 지원</span><span>월 5만원</span></li>
+            <li class="new"><span>도서구입비</span><span>연 30만원</span></li>
+            <li class="new"><span>사내 동아리 지원</span><span>연 30만원/동아리</span></li>
+            <li class="new"><span>워케이션 제도</span><span>분기 1회 3일</span></li>
+            <li class="new"><span>자녀 학자금 지원</span><span>연 200만원</span></li>
+          </ul>
+        </div>
+
+        <div class="dv-wel-c">
+          <div class="dv-wel-h" style="color:#0891B2">C. 병원 특화 복지</div>
+          <ul class="dv-wel-l">
+            <li class="new"><span>본인 안과 진료·검사</span><span>90% 할인</span></li>
+            <li class="new"><span>가족 안과 진료·검사</span><span>70% 할인</span></li>
+            <li class="new"><span>본인 안과 수술 (1회)</span><span>무료 (다초점 포함)</span></li>
+            <li class="new"><span>가족 안과 수술</span><span>50% 할인</span></li>
+            <li class="new"><span>처방약·렌즈</span><span>직원가</span></li>
+            <li class="new"><span>수술 후 유급 회복</span><span>3~7일</span></li>
+            <li class="new"><span>정기 안과 검진</span><span>분기 1회</span></li>
+            <li class="new"><span>드림렌즈 직원가</span><span>50% 할인</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="dv-budget">
+        <h4>직원 복지 연간 예산</h4>
+        <div class="dv-budget-g">
+          <div class="dv-budget-i"><div class="dv-budget-l">기본 강화</div><div class="dv-budget-v">3,500만</div><div class="dv-budget-s">경조사·검진</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">신규 10건</div><div class="dv-budget-v">6,000만</div><div class="dv-budget-s">수당·지원</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">병원 특화</div><div class="dv-budget-v">2,500만</div><div class="dv-budget-s">대부분 원가</div></div>
+          <div class="dv-budget-i"><div class="dv-budget-l">기대 효과</div><div class="dv-budget-v">이직률↓</div><div class="dv-budget-s">10%p 감소 목표</div></div>
+        </div>
+        <div class="dv-budget-total">
+          <span>직원 복지 연간 총액</span>
+          <b>약 1.2억원</b>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 통합 예산·ROI ═══ -->
+  <div class="dv-sec" style="background:linear-gradient(135deg,#FEF3C7 0%,#FCD34D 10%, #FFFFFF 40%)">
+    <div class="dv-sh" style="background:rgba(180,83,9,0.08)">
+      <div class="dv-sno" style="background:#B45309">∑</div>
+      <div>
+        <div class="dv-st">통합 예산 · ROI 시뮬레이션</div>
+        <div class="dv-ssub">5대 디벨롭 영역 연간 투자 3.8~4.5억원 vs 방치 시 손실·기회비용 15억원+</div>
+      </div>
+    </div>
+    <div class="dv-body">
+
+      <table class="dv-tb">
+        <thead>
+          <tr>
+            <th>영역</th>
+            <th>연간 투자</th>
+            <th>핵심 효과</th>
+            <th>정량 회수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="tg">01. 3계층 R&R + CMO·Deputy</td><td>6,000~7,500만원</td><td>대표원장 시간 확보·부서장 Span 정상화</td><td class="rt">부서장 1인 퇴사 방지만으로 회수</td></tr>
+          <tr><td class="tg">02. 서비스매니저 팀 (4명)</td><td>1.6억원</td><td>환자 체류시간 30%↓·NPS 70+·재진율 +10%</td><td class="rt">재진·리퍼럴로 연 10~15억 매출</td></tr>
+          <tr><td class="tg">03. 스트레스 관리 (EAP·MBI)</td><td>6,000~8,000만원</td><td>번아웃 조기 감지·Critical 3인 리스크 해소</td><td class="rt">퇴사 2건 방지 시 4,000만원+</td></tr>
+          <tr><td class="tg">04. 리더십 교육 (4-Tier)</td><td>9,500만원</td><td>리더십 파이프라인 구축·대표원장 경영자化</td><td class="rt">장기 조직 역량 (정량 산출 난이도)</td></tr>
+          <tr><td class="tg">05. 직원 복지 확대</td><td>1.2억원</td><td>이직률 10%p↓·만족도·몰입도 상승</td><td class="rt">채용·OJT 비용 5,000만원+ 절감</td></tr>
+          <tr style="background:var(--color-background-secondary)"><td class="tg" style="font-weight:600">합계 (연간)</td><td class="rt" style="font-size:14px"><b>3.8~4.5억원</b></td><td>매출 대비 1.7~2.0%</td><td class="rt">ROI 300~400%+</td></tr>
+        </tbody>
+      </table>
+
+      <div class="dv-p" style="background:#FEF3C7;padding:14px 16px;border-radius:8px;border-left:3px solid #B45309;margin-top:14px">
+        <b style="color:#78350F">의사결정자 관점</b> — 연간 4억원 투자는 매출 목표 231억의 약 1.8%. 방치 시 잠재 손실(부서장 이탈·만족도 저하·경쟁력 약화)은 연 15억원+ 추정. 단순 비용이 아닌 <b>조직 자본(Organizational Capital) 투자</b>로 보는 것이 적합. 특히 서비스매니저·복지 확대는 환자 만족도와 직결되어 매출 기여가 즉각적.
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 액션 -->
+  <div class="dv-actions">
+    <button class="dv-btn primary" onclick="sendPrompt('위 3계층 R&R·서비스매니저·스트레스·리더십·복지 내용을 모두 반영한 임원 보고서 v2.0 docx를 작성해줘')">📄 임원보고서 v2.0 docx</button>
+    <button class="dv-btn" onclick="sendPrompt('서비스매니저 직무기술서(JD)와 채용공고를 docx로 작성해줘')">👥 서비스매니저 JD·채용공고</button>
+    <button class="dv-btn" onclick="sendPrompt('직원 복지 제도 공식 규정집을 docx로 만들어줘')">📋 복지 규정집 docx</button>
+    <button class="dv-btn" onclick="sendPrompt('부서장 MBI 번아웃 측정 설문지를 제작해줘')">📊 MBI 설문지</button>
+  </div>
+
+</div>
