@@ -1,0 +1,587 @@
+<h2 class="sr-only">천안김안과 심플 SOP 디벨롭 v3.0. 정도현 대표원장 캐릭터 분석 기반 현장실무중심 1페이지 SOP 21종 설계안.</h2>
+<style>
+.sm-wrap{font-family:var(--font-sans);color:var(--color-text-primary);padding:0.5rem 0}
+.sm-hero{background:#0F172A;color:#fff;border-radius:var(--border-radius-lg);padding:1.75rem 1.75rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+.sm-hero::before{content:"";position:absolute;top:0;right:0;width:200px;height:200px;background:radial-gradient(circle,rgba(252,211,77,0.15) 0%,transparent 70%);pointer-events:none}
+.sm-hl{display:inline-block;font-size:10px;font-weight:500;padding:4px 12px;border-radius:999px;background:rgba(252,211,77,0.2);color:#FCD34D;letter-spacing:0.8px;text-transform:uppercase;margin-bottom:12px}
+.sm-hero h1{margin:0 0 8px;font-size:24px;font-weight:500;color:#fff;line-height:1.3}
+.sm-hero p{margin:0;color:rgba(255,255,255,0.72);font-size:13px;line-height:1.7;max-width:700px}
+.sm-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:18px;position:relative}
+.sm-stat{background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.12);border-radius:var(--border-radius-md);padding:12px 14px}
+.sm-stat-l{font-size:10px;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:0.5px;font-weight:500}
+.sm-stat-v{font-size:22px;font-weight:500;margin-top:4px;color:#fff}
+.sm-stat-v .sm-arrow{color:#FCD34D;margin:0 4px;font-size:18px}
+.sm-stat-s{font-size:11px;color:rgba(255,255,255,0.5);margin-top:2px}
+
+.sm-sec{margin-bottom:1.75rem;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);overflow:hidden}
+.sm-sh{padding:1.25rem 1.5rem;border-bottom:0.5px solid var(--color-border-tertiary);display:flex;gap:14px;align-items:center}
+.sm-sno{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:14px;color:#fff;flex-shrink:0;background:#0F172A}
+.sm-sno.s2{background:#7C3AED}
+.sm-sno.s3{background:#0891B2}
+.sm-sno.s4{background:#059669}
+.sm-sno.s5{background:#B45309}
+.sm-st{font-size:17px;font-weight:500;line-height:1.3}
+.sm-ssub{font-size:12px;color:var(--color-text-secondary);margin-top:3px;line-height:1.5}
+.sm-body{padding:1.25rem 1.5rem}
+
+/* 캐릭터 분석 */
+.sm-cb{background:#FEF3C7;border-left:3px solid #B45309;padding:12px 14px;border-radius:var(--border-radius-md);margin-bottom:1rem}
+.sm-cb-l{font-size:11px;font-weight:500;color:#78350F;text-transform:uppercase;letter-spacing:0.4px;margin-bottom:4px}
+.sm-cb-t{font-size:12px;color:#1F2937;line-height:1.6}
+.sm-char{display:grid;grid-template-columns:1fr;gap:10px;margin:1rem 0}
+.sm-char-c{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:14px 16px}
+.sm-char-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:8px;flex-wrap:wrap}
+.sm-char-info{flex:1;min-width:200px}
+.sm-char-n{font-size:13px;font-weight:500;line-height:1.3}
+.sm-char-e{font-size:11px;color:var(--color-text-tertiary);font-style:italic;margin-top:2px}
+.sm-score{display:inline-flex;gap:2px;align-items:center}
+.sm-score span{width:14px;height:14px;border-radius:2px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary)}
+.sm-score.s5 span:nth-child(-n+5){background:#B45309;border-color:#B45309}
+.sm-score.s4 span:nth-child(-n+4){background:#D97706;border-color:#D97706}
+.sm-score.s3 span:nth-child(-n+3){background:#F59E0B;border-color:#F59E0B}
+.sm-char-sig{margin-top:8px;padding-top:8px;border-top:0.5px dashed var(--color-border-tertiary);display:grid;grid-template-columns:auto 1fr;gap:8px 12px;font-size:11px;align-items:start}
+.sm-char-sig-k{color:var(--color-text-tertiary);font-weight:500;white-space:nowrap}
+.sm-char-sig-v{color:var(--color-text-secondary);line-height:1.6}
+.sm-char-sig-v b{color:var(--color-text-primary);font-weight:500}
+
+/* 원칙 카드 */
+.sm-pr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:1rem 0}
+.sm-pr-c{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px;position:relative}
+.sm-pr-n{position:absolute;top:10px;right:12px;font-size:24px;font-weight:500;color:rgba(15,23,42,0.08);letter-spacing:-1px;font-family:Georgia,serif}
+.sm-pr-t{font-size:13px;font-weight:500;margin-bottom:6px;line-height:1.35;color:#1E293B}
+.sm-pr-d{font-size:11px;color:var(--color-text-secondary);line-height:1.6}
+.sm-pr-e{font-size:11px;color:var(--color-text-tertiary);margin-top:8px;padding-top:8px;border-top:0.5px dashed var(--color-border-tertiary);font-style:italic}
+.sm-pr-e b{color:#B45309;font-style:normal;font-weight:500}
+
+/* Before/After */
+.sm-ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1rem 0}
+.sm-ba-c{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px}
+.sm-ba-c.b{border-left:3px solid #DC2626}
+.sm-ba-c.a{border-left:3px solid #059669}
+.sm-ba-tag{display:inline-block;font-size:10px;font-weight:500;padding:2px 8px;border-radius:4px;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.4px}
+.sm-ba-c.b .sm-ba-tag{background:#FEE2E2;color:#7F1D1D}
+.sm-ba-c.a .sm-ba-tag{background:#D1FAE5;color:#065F46}
+.sm-ba-t{font-size:13px;font-weight:500;line-height:1.35;margin-bottom:8px}
+.sm-ba-spec{font-size:12px;color:var(--color-text-secondary);line-height:1.7}
+.sm-ba-spec b{color:var(--color-text-primary);font-weight:500}
+.sm-ba-spec .del{text-decoration:line-through;text-decoration-color:rgba(220,38,38,0.5);color:var(--color-text-tertiary)}
+
+/* 샘플 SOP 카드 */
+.sm-samples{display:grid;grid-template-columns:1fr;gap:14px;margin:1rem 0}
+.sm-sample{border:1.5px solid #1E293B;border-radius:var(--border-radius-md);padding:18px 20px;background:#FFFFFF;position:relative;color:#1F2937}
+.sm-sample-h{display:flex;justify-content:space-between;align-items:center;padding-bottom:10px;margin-bottom:12px;border-bottom:2px solid #1E293B}
+.sm-sample-no{background:#DC2626;color:#fff;padding:4px 10px;border-radius:4px;font-size:11px;font-weight:500;letter-spacing:0.5px}
+.sm-sample.rev .sm-sample-no{background:#2563EB}
+.sm-sample.ops .sm-sample-no{background:#059669}
+.sm-sample-t{font-size:17px;font-weight:600;letter-spacing:-0.3px;color:#0F172A}
+.sm-sample-stamp{display:flex;align-items:center;gap:6px;color:#7F1D1D;font-size:10px;font-weight:500;border:1px solid #7F1D1D;padding:3px 8px;border-radius:4px}
+.sm-must{margin:14px 0}
+.sm-must-h{font-size:11px;font-weight:600;color:#7F1D1D;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.sm-must-h::before{content:"●";color:#DC2626}
+.sm-must-l{padding:0;margin:0;list-style:none}
+.sm-must-l li{padding:10px 12px;background:#FEF2F2;border-left:3px solid #DC2626;border-radius:4px;margin-bottom:4px;font-size:13px;font-weight:600;color:#0F172A;display:flex;align-items:center;gap:10px}
+.sm-must-l li::before{counter-increment:must-c;content:counter(must-c);background:#DC2626;color:#fff;width:22px;height:22px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.sm-must-l{counter-reset:must-c}
+.sm-check{margin:12px 0}
+.sm-check-h{font-size:11px;font-weight:600;color:#78350F;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.sm-check-g{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.sm-check-i{padding:8px 10px;background:#FFFBEB;border:1px solid #FCD34D;border-radius:4px;font-size:12px;color:#1F2937;display:flex;align-items:center;gap:8px}
+.sm-check-i::before{content:"";width:14px;height:14px;border:1.5px solid #B45309;border-radius:3px;background:#fff;flex-shrink:0}
+.sm-kpi{margin-top:12px;padding:10px 12px;background:#0F172A;color:#fff;border-radius:4px;display:flex;justify-content:space-between;align-items:center;font-size:12px;flex-wrap:wrap;gap:8px}
+.sm-kpi-l{color:rgba(255,255,255,0.7)}
+.sm-kpi-v{color:#FCD34D;font-weight:600;font-size:14px}
+.sm-sign{margin-top:12px;display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px dashed #9CA3AF;font-size:11px;color:#6B7280}
+.sm-sign-box{width:90px;height:30px;border:1px solid #9CA3AF;border-radius:3px;background:#F9FAFB;display:flex;align-items:center;justify-content:center;font-size:10px;color:#B0B0B0;font-style:italic}
+
+/* 구성 플랜 */
+.sm-plan{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:1rem 0}
+.sm-plan-c{background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:14px 16px;border-top:3px solid #0F172A}
+.sm-plan-c.rev{border-top-color:#2563EB}
+.sm-plan-c.ops{border-top-color:#059669}
+.sm-plan-cat{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;border-radius:4px;background:#0F172A;color:#fff;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.4px}
+.sm-plan-c.rev .sm-plan-cat{background:#2563EB}
+.sm-plan-c.ops .sm-plan-cat{background:#059669}
+.sm-plan-t{font-size:13px;font-weight:500;margin-bottom:8px;line-height:1.35}
+.sm-plan-list{padding:0;margin:0;list-style:none;font-size:12px;line-height:1.7}
+.sm-plan-list li{padding:3px 0;color:var(--color-text-secondary);display:flex;justify-content:space-between;gap:10px;border-bottom:0.5px dashed var(--color-border-tertiary)}
+.sm-plan-list li:last-child{border-bottom:none}
+.sm-plan-list li span:first-child{color:var(--color-text-primary)}
+.sm-plan-list li span:last-child{font-size:10px;color:var(--color-text-tertiary);font-family:var(--font-mono)}
+
+/* 액션 */
+.sm-actions{margin:2rem 0 0.5rem;padding-top:1.25rem;border-top:0.5px solid var(--color-border-tertiary);display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.sm-btn{font-family:var(--font-sans);padding:9px 18px;font-size:13px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary);background:transparent;cursor:pointer;color:var(--color-text-primary);font-weight:500}
+.sm-btn:hover{background:var(--color-background-secondary)}
+.sm-btn.primary{background:#0F172A;color:#fff;border-color:#0F172A}
+</style>
+
+<div class="sm-wrap">
+
+  <div class="sm-hero">
+    <span class="sm-hl">v3.0 · Character-Based Simple SOP</span>
+    <h1>천안김안과 심플 핵심운영 SOP 디벨롭</h1>
+    <p>정도현 대표원장 캐릭터 기반 설계 · 현장실무 중심 1페이지 완결형 · 기존 115p 정식 매뉴얼 →  21p 현장 배포용 카드 덱으로 경영효율화</p>
+    <div class="sm-stats">
+      <div class="sm-stat">
+        <div class="sm-stat-l">분량</div>
+        <div class="sm-stat-v">115p <span class="sm-arrow">→</span> 21p</div>
+        <div class="sm-stat-s">82% 슬림화</div>
+      </div>
+      <div class="sm-stat">
+        <div class="sm-stat-l">챕터 구성</div>
+        <div class="sm-stat-v">13장 <span class="sm-arrow">→</span> 3-Must</div>
+        <div class="sm-stat-s">핵심만 유지</div>
+      </div>
+      <div class="sm-stat">
+        <div class="sm-stat-l">현장 실행</div>
+        <div class="sm-stat-v">5분 <span class="sm-arrow">→</span> 30초</div>
+        <div class="sm-stat-s">읽기→실행</div>
+      </div>
+      <div class="sm-stat">
+        <div class="sm-stat-l">배포 형식</div>
+        <div class="sm-stat-v">라미네이트</div>
+        <div class="sm-stat-s">부서 벽 부착</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 01. 정도현 대표원장 캐릭터 분석 ═══ -->
+  <div class="sm-sec">
+    <div class="sm-sh">
+      <div class="sm-sno">01</div>
+      <div>
+        <div class="sm-st">정도현 대표원장 캐릭터 분석 — 6대 특성</div>
+        <div class="sm-ssub">조직 시그널·의사결정 패턴·조직 확장 이력에서 역추론한 리더십 성향 프로파일</div>
+      </div>
+    </div>
+    <div class="sm-body">
+
+      <div class="sm-cb">
+        <div class="sm-cb-l">분석 전제</div>
+        <div class="sm-cb-t">본 분석은 개인 인터뷰가 아닌 <b>조직 시그널 역추론</b>에 기반합니다. 월 매출 19.25억 규모의 안과를 총괄하며 71명 조직·6명 원장단을 구축한 리더의 행동 패턴에서 유추한 설계용 페르소나입니다. MSO 컨설팅 경험을 바탕으로 정확성을 보정해주시면 설계 최적화 가능.</div>
+      </div>
+
+      <div class="sm-char">
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">① 실용주의 지향 (Pragmatism)</div>
+              <div class="sm-char-e">"이게 실제로 돌아가는가?"</div>
+            </div>
+            <div class="sm-score s5"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">월 매출 19.25억 규모 병원을 맨손에서 구축 · <b>실전에서 검증되지 않은 이론 불신 경향</b></div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">이론·배경·법적 근거는 최소화 · <b>현장에서 즉시 실행 가능한 액션만</b></div>
+          </div>
+        </div>
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">② 속도 선호 (Speed-oriented)</div>
+              <div class="sm-char-e">"읽는 데 1분 넘으면 실패"</div>
+            </div>
+            <div class="sm-score s4"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">6명 원장단으로 빠르게 확장 · <b>의사결정·실행 속도 우선</b> 경영 스타일</div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">1페이지 원칙 엄수 · <b>큰 글자·시각 우선·결재까지 30초</b> 내 완결</div>
+          </div>
+        </div>
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">③ 숫자·성과 중심 (Numbers-Driven)</div>
+              <div class="sm-char-e">"KPI로 말해야 한다"</div>
+            </div>
+            <div class="sm-score s5"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">KPI 63개 체계 도입 결단 · <b>정성 평가보다 정량 지표 신뢰</b></div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">각 SOP마다 <b>핵심 KPI 1~2개 하이라이트</b> · 목표 숫자 병기</div>
+          </div>
+        </div>
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">④ 디테일 중시 (Detail-oriented)</div>
+              <div class="sm-char-e">"중요한 것만 완벽히"</div>
+            </div>
+            <div class="sm-score s4"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">수술 안전·합병증 제로 지향 · <b>중대 영역은 철저, 주변부는 위임 성향</b></div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">Critical SOP(수술안전 3종)는 <b>디테일 유지</b> · 나머지는 과감히 축약</div>
+          </div>
+        </div>
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">⑤ 직접 관여 성향 (Hands-on)</div>
+              <div class="sm-char-e">"확인해야 안심"</div>
+            </div>
+            <div class="sm-score s4"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">대부분 의사결정이 대표원장에게 집중 · <b>위임에 대한 심리적 저항</b> 추정</div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">각 SOP에 <b>"대표원장 인증" 마크</b> · 권위 부여로 위임 심리 보완</div>
+          </div>
+        </div>
+
+        <div class="sm-char-c">
+          <div class="sm-char-top">
+            <div class="sm-char-info">
+              <div class="sm-char-n">⑥ 브랜드·외관 중시 (Brand-conscious)</div>
+              <div class="sm-char-e">"외부에 보여줄 수 있는가"</div>
+            </div>
+            <div class="sm-score s4"><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+          <div class="sm-char-sig">
+            <div class="sm-char-sig-k">조직 시그널</div>
+            <div class="sm-char-sig-v">MSO 도입·브랜딩 투자·인증 준비 · <b>수준 있는 외형 중시</b></div>
+            <div class="sm-char-sig-k">SOP 시사</div>
+            <div class="sm-char-sig-v">심플하되 <b>디자인 품질 엄격</b> · 환자·외부인 눈에 띄어도 부끄럽지 않은 수준</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 02. 설계 원칙 7가지 ═══ -->
+  <div class="sm-sec">
+    <div class="sm-sh">
+      <div class="sm-sno s2">02</div>
+      <div>
+        <div class="sm-st">캐릭터 기반 SOP 설계 원칙 — 7 Principles</div>
+        <div class="sm-ssub">6대 캐릭터 특성에서 도출한 SOP 디자인 원칙 · 모든 SOP가 준수하는 공통 기준</div>
+      </div>
+    </div>
+    <div class="sm-body">
+
+      <div class="sm-pr">
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">01</div>
+          <div class="sm-pr-t">One-Page Principle</div>
+          <div class="sm-pr-d">모든 SOP는 A4 한 장 이내. 넘치면 그 SOP 자체가 실패. 예외 없음.</div>
+          <div class="sm-pr-e">캐릭터 ②속도 · <b>→ 1분 이내 파악</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">02</div>
+          <div class="sm-pr-t">Top-3 Must-Do</div>
+          <div class="sm-pr-d">각 SOP는 "반드시 해야 할 일" 3가지만 강조. 나머지는 부가 체크리스트.</div>
+          <div class="sm-pr-e">캐릭터 ①실용 · <b>→ 최대 7가지 기억 한계</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">03</div>
+          <div class="sm-pr-t">Visual First</div>
+          <div class="sm-pr-d">글보다 번호·색·체크박스·화살표. 텍스트 비중 50% 이하.</div>
+          <div class="sm-pr-e">캐릭터 ②⑥ · <b>→ 즉각 인지 가능</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">04</div>
+          <div class="sm-pr-t">If-Then Decision Tree</div>
+          <div class="sm-pr-d">"~하면 → ~한다" 조건부 의사결정 트리로 구성. 긴 설명 금지.</div>
+          <div class="sm-pr-e">캐릭터 ①② · <b>→ 판단 부담 제거</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">05</div>
+          <div class="sm-pr-t">Number-Direct</div>
+          <div class="sm-pr-d">각 SOP 하단에 핵심 KPI 1~2개 하이라이트. 숫자 목표 병기.</div>
+          <div class="sm-pr-e">캐릭터 ③ · <b>→ 성과 직결 가시화</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">06</div>
+          <div class="sm-pr-t">Authority-Stamped</div>
+          <div class="sm-pr-d">우상단에 "대표원장 인증 v1.0" 마크. 권위 부여로 실행 담보.</div>
+          <div class="sm-pr-e">캐릭터 ⑤ · <b>→ 심리적 위임 보완</b></div>
+        </div>
+        <div class="sm-pr-c">
+          <div class="sm-pr-n">07</div>
+          <div class="sm-pr-t">Mobile-Ready</div>
+          <div class="sm-pr-d">QR 스캔 시 모바일 동일 화면. 현장 태블릿·핸드폰으로도 확인.</div>
+          <div class="sm-pr-e">캐릭터 ②⑥ · <b>→ 현장 실무 최적화</b></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 03. Before / After 비교 ═══ -->
+  <div class="sm-sec">
+    <div class="sm-sh">
+      <div class="sm-sno s3">03</div>
+      <div>
+        <div class="sm-st">Before / After — SOP-04 수술전 확인 체크리스트 예시</div>
+        <div class="sm-ssub">정식 규격 v2.0 대비 현장 실무형 v3.0의 차이 · 실행률 예측 3배 이상</div>
+      </div>
+    </div>
+    <div class="sm-body">
+
+      <div class="sm-ba">
+        <div class="sm-ba-c b">
+          <span class="sm-ba-tag">Before · v2.0</span>
+          <div class="sm-ba-t">정식 규격 통합 매뉴얼</div>
+          <div class="sm-ba-spec">
+            <div>분량: <b>20페이지</b> (13챕터)</div>
+            <div>구성: <span class="del">개정이력·용어정의·법적근거·RACI·플로우·상세프로토콜·체크리스트·예외·교육·감사·KPI·관련문서</span></div>
+            <div>독해: <b>5~10분 소요</b></div>
+            <div>배포: PC 전자문서 · 바인더 보관</div>
+            <div>실제 활용: <b>수술실 현장 사용률 낮음</b> (참조만)</div>
+            <div>대상: 인증 감사·외부 제출용</div>
+          </div>
+        </div>
+        <div class="sm-ba-c a">
+          <span class="sm-ba-tag">After · v3.0</span>
+          <div class="sm-ba-t">현장 실무형 심플 카드</div>
+          <div class="sm-ba-spec">
+            <div>분량: <b>A4 1페이지</b></div>
+            <div>구성: <b>3-Must + 2-Check + KPI + 서명</b></div>
+            <div>독해: <b>30초</b></div>
+            <div>배포: <b>라미네이트 · 수술실 벽 부착 · QR 모바일</b></div>
+            <div>실제 활용: <b>매 수술마다 체크·서명</b></div>
+            <div>대상: 수술간호사·집도의 즉시 실행용</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm-cb" style="margin-top:14px">
+        <div class="sm-cb-l">양립 전략</div>
+        <div class="sm-cb-t">v2.0 정식 매뉴얼은 <b>인증·감사용으로 유지</b> (경영진·MSO 보관). v3.0 현장 카드는 <b>매일 실무 사용</b>. 내용은 완전 일치하되 포맷만 달라 법적·인증 리스크 없음. 한 SOP · 두 가지 포맷 · 두 사용처.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 04. 샘플 SOP 카드 3종 미리보기 ═══ -->
+  <div class="sm-sec">
+    <div class="sm-sh">
+      <div class="sm-sno s4">04</div>
+      <div>
+        <div class="sm-st">샘플 SOP 카드 3종 미리보기</div>
+        <div class="sm-ssub">Critical (수술안전) · Revenue (상담·매출) · Operations (운영) 각 1건</div>
+      </div>
+    </div>
+    <div class="sm-body">
+
+      <div class="sm-samples">
+
+        <!-- SOP-04 Critical -->
+        <div class="sm-sample">
+          <div class="sm-sample-h">
+            <div>
+              <span class="sm-sample-no">SOP-04 CRITICAL</span>
+              <div class="sm-sample-t" style="margin-top:6px">수술전 확인 — 사이트·IOL·환자</div>
+            </div>
+            <div class="sm-sample-stamp">★ 대표원장 인증 v1.0</div>
+          </div>
+
+          <div class="sm-must">
+            <div class="sm-must-h">MUST · 반드시 3가지</div>
+            <ul class="sm-must-l">
+              <li>환자 이름·생년월일 <b>2가지 확인</b> (유도질문 금지)</li>
+              <li>수술 부위 <b>R/L 마킹</b> 눈 위 시그니처펜</li>
+              <li>IOL 라벨 <b>도수·종류 2인 구두 확인</b></li>
+            </ul>
+          </div>
+
+          <div class="sm-check">
+            <div class="sm-check-h">CHECK · Time-Out 직전</div>
+            <div class="sm-check-g">
+              <div class="sm-check-i">수술동의서 서명</div>
+              <div class="sm-check-i">알레르기·항응고제</div>
+            </div>
+          </div>
+
+          <div class="sm-kpi">
+            <span class="sm-kpi-l">KPI</span>
+            <span class="sm-kpi-v">수술 사이트 오류 0건 / 월</span>
+          </div>
+
+          <div class="sm-sign">
+            <span>순회간호사</span>
+            <div class="sm-sign-box">서명</div>
+            <span>집도의</span>
+            <div class="sm-sign-box">서명</div>
+          </div>
+        </div>
+
+        <!-- SOP-10 Revenue -->
+        <div class="sm-sample rev">
+          <div class="sm-sample-h">
+            <div>
+              <span class="sm-sample-no">SOP-10 REVENUE</span>
+              <div class="sm-sample-t" style="margin-top:6px">백내장 상담 — IOL 3단계</div>
+            </div>
+            <div class="sm-sample-stamp">★ 대표원장 인증 v1.0</div>
+          </div>
+
+          <div class="sm-must">
+            <div class="sm-must-h">MUST · 반드시 3가지</div>
+            <ul class="sm-must-l">
+              <li>진료 직후 <b>30초 내 인계</b>·상담실 이동</li>
+              <li>생활방식 <b>5개 항목</b> 청취 (운전·독서·취미·직업·기대시력)</li>
+              <li>IOL <b>3단계 전체 설명</b> (단초점·토릭·다초점) + 가격표 문서</li>
+            </ul>
+          </div>
+
+          <div class="sm-check">
+            <div class="sm-check-h">CHECK · 상담 종료 전</div>
+            <div class="sm-check-g">
+              <div class="sm-check-i">시뮬레이션 영상 시청</div>
+              <div class="sm-check-i">F/U 콜 1·3·7일 입력</div>
+            </div>
+          </div>
+
+          <div class="sm-kpi">
+            <span class="sm-kpi-l">KPI</span>
+            <span class="sm-kpi-v">프리미엄 IOL 비중 40%+ · 전환율 80%+</span>
+          </div>
+
+          <div class="sm-sign">
+            <span>상담 담당</span>
+            <div class="sm-sign-box">서명</div>
+            <span>고객팀장 (검토)</span>
+            <div class="sm-sign-box">서명</div>
+          </div>
+        </div>
+
+        <!-- SOP-16 Operations -->
+        <div class="sm-sample ops">
+          <div class="sm-sample-h">
+            <div>
+              <span class="sm-sample-no">SOP-16 OPS</span>
+              <div class="sm-sample-t" style="margin-top:6px">급여 산정 — 월간 프로세스</div>
+            </div>
+            <div class="sm-sample-stamp">★ 대표원장 인증 v1.0</div>
+          </div>
+
+          <div class="sm-must">
+            <div class="sm-must-h">MUST · 반드시 3가지</div>
+            <ul class="sm-must-l">
+              <li><b>20일 근태 마감</b> (전자 시스템만, 수기 금지)</li>
+              <li><b>23~25일 산정·검토</b> (재무회계 실무 → 팀장 검토)</li>
+              <li><b>말일 이체·익월 5일 4대보험 신고</b></li>
+            </ul>
+          </div>
+
+          <div class="sm-check">
+            <div class="sm-check-h">CHECK · 오류 방지</div>
+            <div class="sm-check-g">
+              <div class="sm-check-i">연장·야간·휴일 수당 계산식</div>
+              <div class="sm-check-i">성과급 KPI 등급 반영</div>
+            </div>
+          </div>
+
+          <div class="sm-kpi">
+            <span class="sm-kpi-l">KPI</span>
+            <span class="sm-kpi-v">급여 오류 0건 · 4대보험 지연 0건</span>
+          </div>
+
+          <div class="sm-sign">
+            <span>재무회계</span>
+            <div class="sm-sign-box">서명</div>
+            <span>대표원장 최종</span>
+            <div class="sm-sign-box">서명</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ 05. 21개 SOP 재구성 플랜 ═══ -->
+  <div class="sm-sec">
+    <div class="sm-sh">
+      <div class="sm-sno s5">05</div>
+      <div>
+        <div class="sm-st">21개 SOP 심플 카드 재구성 플랜</div>
+        <div class="sm-ssub">3개 카테고리 · 각 카테고리별 색상 코드 · A4 21장 마스터 덱</div>
+      </div>
+    </div>
+    <div class="sm-body">
+
+      <div class="sm-plan">
+
+        <div class="sm-plan-c">
+          <span class="sm-plan-cat">● Critical — 생명·안전 직결 (6종)</span>
+          <div class="sm-plan-t">수술 안전·환자 권리 보호</div>
+          <ul class="sm-plan-list">
+            <li><span>SOP-04 수술전 확인</span><span>3-Must</span></li>
+            <li><span>SOP-05 수술실 멸균</span><span>TASS 3대 경고</span></li>
+            <li><span>SOP-06 합병증 대응</span><span>전방내 항생제</span></li>
+            <li><span>SOP-07 접수·문진</span><span>개인정보 5일 파기</span></li>
+            <li><span>SOP-08 수납·처방코드</span><span>삭감 0.3% 이하</span></li>
+            <li><span>SOP-09 산정특례 등록</span><span>3자 서명 3일 내</span></li>
+          </ul>
+        </div>
+
+        <div class="sm-plan-c rev">
+          <span class="sm-plan-cat">● Revenue — 매출·전환 직결 (6종)</span>
+          <div class="sm-plan-t">상담·비급여·마케팅</div>
+          <ul class="sm-plan-list">
+            <li><span>SOP-10 백내장 상담</span><span>IOL 3단계</span></li>
+            <li><span>SOP-11 비급여 체계</span><span>반기 리뷰</span></li>
+            <li><span>SOP-12 IPL 패키지</span><span>5회 시술</span></li>
+            <li><span>SOP-13 콘텐츠 가이드</span><span>의학 검수</span></li>
+            <li><span>SOP-14 연간 마케팅</span><span>ROAS 500%+</span></li>
+            <li><span>SOP-15 경쟁 분석</span><span>분기 리포트</span></li>
+          </ul>
+        </div>
+
+        <div class="sm-plan-c ops">
+          <span class="sm-plan-cat">● Operations — 운영·인사 (9종)</span>
+          <div class="sm-plan-t">진료·검사·인사·조직</div>
+          <ul class="sm-plan-list">
+            <li><span>SOP-01 환자 동선</span><span>대기 15분 이내</span></li>
+            <li><span>SOP-02 검사실 운영</span><span>재검률 5% 이하</span></li>
+            <li><span>SOP-03 검사지시 세트</span><span>질환별 표준</span></li>
+            <li><span>SOP-16 급여 산정</span><span>오류 0건</span></li>
+            <li><span>SOP-17 입퇴사</span><span>48h 내 처리</span></li>
+            <li><span>SOP-18 근태·연차</span><span>85% 소진</span></li>
+            <li><span>SOP-19 신입 OJT</span><span>3개월 수료</span></li>
+            <li><span>SOP-20 인력 산정</span><span>반기 재산정</span></li>
+            <li><span>SOP-21 직무기술서</span><span>연 1회 개정</span></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="sm-cb" style="background:#EFF6FF;border-left-color:#2563EB;margin-top:14px">
+        <div class="sm-cb-l" style="color:#1E3A8A">배포·활용 전략</div>
+        <div class="sm-cb-t">
+          <b>① 인쇄·라미네이트</b> — A4 21장 마스터 덱 제작 후 각 부서 벽에 부착 (카테고리별 색상 구분)<br>
+          <b>② 모바일 QR</b> — 각 카드 우측 하단 QR → 스마트폰으로 확인 (현장 태블릿 없이도 가능)<br>
+          <b>③ 개정 프로토콜</b> — 3개월마다 대표원장 리뷰 → 변경 시 전 부서 재배포 (재라미네이트)<br>
+          <b>④ 외부용 v2.0 병행 유지</b> — 인증 감사·법적 대응은 정식 매뉴얼 그대로 사용
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 액션 -->
+  <div class="sm-actions">
+    <button class="sm-btn primary" onclick="sendPrompt('21개 SOP를 모두 1페이지 심플 카드 형식으로 제작해서 A4 21장 마스터 덱 docx로 만들어줘. 정도현 대표원장 캐릭터 반영 필수')">📄 21장 심플 카드 덱 docx</button>
+    <button class="sm-btn" onclick="sendPrompt('Critical 6종만 먼저 1페이지 심플 카드로 docx로 빠르게 제작해줘')">⚡ Critical 6종 우선 제작</button>
+    <button class="sm-btn" onclick="sendPrompt('심플 SOP 카드와 함께 배포할 현장 가이드 (QR 코드·라미네이트 스펙·개정 프로토콜) 안내서를 만들어줘')">📋 배포·운영 가이드</button>
+    <button class="sm-btn" onclick="sendPrompt('정도현 대표원장 캐릭터 분석을 더 심화해서 리더십 코칭 어젠다를 작성해줘')">🎯 대표원장 코칭 어젠다</button>
+  </div>
+
+</div>
